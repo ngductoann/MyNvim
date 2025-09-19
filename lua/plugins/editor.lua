@@ -94,7 +94,10 @@ local function symbols_filter(entry, ctx)
 end
 
 return {
-
+  {
+    "nvim-telescope/telescope.nvim",
+    enabled = false,
+  },
   {
     "ibhagwan/fzf-lua",
     cmd = "FzfLua",
