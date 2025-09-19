@@ -1,0 +1,136 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding = { x = 0, y = 0 }
+dynamic_padding = true
+opacity = 1.0
+blur = true
+title = "Alacritty"
+dynamic_title = true
+
+[scrolling]
+history = 65535
+
+[font]
+normal = { family = "CaskaydiaCove Nerd Font", style = "Regular" }
+bold = { family = "CaskaydiaCove Nerd Font", style = "Bold" }
+italic = { family = "CaskaydiaCove Nerd Font", style = "Italic" }
+bold_italic = { family = "CaskaydiaCove Nerd Font", style = "Bold Italic" }
+size = 12.0
+builtin_box_drawing = true
+
+[colors.primary]
+background = "#161616"        # base00
+foreground = "#f2f4f8"        # base05
+dim_foreground = "#525253"    # base04
+bright_foreground = "#ffffff" # base07
+
+[colors.cursor]
+text = "#161616"   # base00
+cursor = "#f2f4f8" # base05
+
+[colors.vi_mode_cursor]
+text = "#161616"   # base00
+cursor = "#78A9FF" # base08
+
+[colors.search.matches]
+foreground = "#161616" # base00
+background = "#ffe731" # yellow/sun
+
+[colors.search.focused_match]
+foreground = "#161616" # base00
+background = "#25be6a" # green
+
+[colors.hints.start]
+foreground = "#161616" # base00
+background = "#ffa332" # orange
+
+[colors.hints.end]
+foreground = "#161616" # base00
+background = "#525253" # base04
+
+[colors.footer_bar]
+foreground = "#161616" # base00
+background = "#525253" # base04
+
+[colors.selection]
+text = "#161616"       # base00
+background = "#282828" # base01
+
+[colors.normal]
+black = "#282828"   # base01
+red = "#EE5396"     # red
+green = "#42BE65"   # green
+yellow = "#ffe731"  # yellow/sun
+blue = "#33B1FF"    # blue/nord_blue
+magenta = "#BE95FF" # purple
+cyan = "#3DDBD9"    # cyan
+white = "#e0e0e0"   # base06
+
+[colors.bright]
+black = "#3b3b3b"   # base03
+red = "#FF7EB6"     # baby_pink/pink
+green = "#6FD96F"   # vibrant_green
+yellow = "#ffe731"  # yellow/sun
+blue = "#78A9FF"    # blue/nord_blue
+magenta = "#BE95FF" # purple
+cyan = "#33B1FF"    # teal/base0C
+white = "#ffffff"   # base07
+
+[colors.dim]
+black = "#161616"   # base00
+red = "#EE5396"     # red
+green = "#25be6a"   # green
+yellow = "#ffe731"  # yellow/sun
+blue = "#78A9FF"    # blue/nord_blue
+magenta = "#BE95FF" # purple
+cyan = "#3DDBD9"    # cyan
+white = "#525253"   # base04
+
+[colors]
+indexed_colors = [
+  { index = 16, color = "#ffa332" }, # orange
+  { index = 17, color = "#9B69D9" }, # dark_purple
+]
+
+draw_bold_text_with_bright_colors = true
+
+[selection]
+save_to_clipboard = true
+
+[cursor.style]
+shape = "Beam"
+blinking = "Off"
+
+[cursor.vi_mode_style]
+shape = "Block"
+blinking = "Off"
+
+[mouse]
+hide_when_typing = false
+bindings = [{ mouse = "Middle", action = "PasteSelection" }]
+
+[keyboard]
+bindings = [
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "T", mods = "Control|Shift", action = "ToggleFullscreen" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "Paste", action = "Paste" },
+  { key = "Copy", action = "Copy" },
+  { key = "Insert", mods = "Shift", action = "PasteSelection" },
+  { key = "F", mods = "Control|Shift", action = "SearchForward", mode = "~Search" },
+  { key = "B", mods = "Control|Shift", action = "SearchBackward", mode = "~Search" },
+  { key = "Key0", mods = "Control", action = "ResetFontSize" },
+  { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "L", mods = "Control", action = "ClearLogNotice" },
+  { key = "L", mods = "Control", chars = "\f" },
+  { key = "PageUp", mods = "Shift", action = "ScrollPageUp", mode = "~Alt" },
+  { key = "PageDown", mods = "Shift", action = "ScrollPageDown", mode = "~Alt" },
+  { key = "Up", mods = "Shift", action = "ScrollLineUp", mode = "~Alt" },
+  { key = "Down", mods = "Shift", action = "ScrollLineDown", mode = "~Alt" },
+  { key = "Home", mods = "Shift", action = "ScrollToTop", mode = "~Alt" },
+  { key = "End", mods = "Shift", action = "ScrollToBottom", mode = "~Alt" },
+]
