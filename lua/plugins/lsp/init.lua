@@ -7,11 +7,6 @@ return {
     dependencies = {
       "mason.nvim",
       { "mason-org/mason-lspconfig.nvim", config = function() end },
-      {
-        "folke/neoconf.nvim",
-        cmd = "Neoconf",
-        opts = {},
-      },
     },
     opts = function()
       ---@class PluginLspOpts
@@ -239,12 +234,12 @@ return {
     "mason-org/mason.nvim",
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
-    build = ":MasonUpdate",
     opts_extend = { "ensure_installed" },
     opts = {
       ensure_installed = {
         "stylua",
         "shfmt",
+        "codespell",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}

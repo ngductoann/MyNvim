@@ -57,7 +57,22 @@ return {
   },
   {
     "mason-org/mason.nvim",
-    opts = { ensure_installed = { "java-debug-adapter", "java-test", "jdtls" } },
+    opts = { ensure_installed = { "java-debug-adapter", "java-test", "jdtls", "google-java-format" } },
+  },
+
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        java = { "google-java-format" },
+      },
+      formatters = {
+        ["google-java-format"] = {
+          prepend_args = { "--aosp" },
+        },
+      },
+    },
   },
 
   -- Configure nvim-lspconfig to install the server automatically via mason, but
@@ -85,7 +100,7 @@ return {
     opts = function()
       local cmd = { vim.fn.exepath "jdtls" }
       if LazyVim.has "mason.nvim" then
-        local lombok_jar = vim.fn.expand "$MASON/share/jdtls/lombok.jar"
+        local lombok_jar = vim.fn.stdpath "data" .. "/mason/share/jdtls/lombok.jar"
         table.insert(cmd, string.format("--jvm-arg=-javaagent:%s", lombok_jar))
       end
       return {
